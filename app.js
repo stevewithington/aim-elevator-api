@@ -62,15 +62,17 @@ app.get('/api/elevator/requests/', (req, res, next) => {
 });
 
 /**
- * GET ~ Elevator Requests by FLoor
+ * GET ~ Elevator Get Next Floor
  * <http://localhost:8080/api/elevator/requestsbyfloor/>
  */
-app.get('/api/elevator/requestsbyfloor/', (req, res, next) => {
+app.get('/api/elevator/nextfloor/', (req, res, next) => {
   res.status(200).send({
     'data': {
       'error': false
       , 'success': true
-      , 'results': elevator.getRequestsByFloor()
+      , 'results': {
+          'nextFloor': elevator.getNextFloor()
+      }
     }
   });
 });

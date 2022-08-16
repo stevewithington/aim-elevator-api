@@ -1,0 +1,514 @@
+{
+  "info": {
+    "_postman_id": "acc12a41-87b6-45b1-bb85-2a0ef8c6eb8f",
+    "name": "Elevator API",
+    "description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests a user can send?",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "6657527"
+  },
+  "item": [
+    {
+      "name": "Elevator Details",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/elevator",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "elevator"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Example Success",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "localhost:8080/api/elevator",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "elevator"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "589"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"24d-WgpAHlOILAcLgadqZqhgUszJ/aM\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 16 Aug 2022 00:06:37 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"data\": {\n        \"error\": false,\n        \"success\": true,\n        \"results\": {\n            \"state\": \"idle\",\n            \"doors\": \"closed\",\n            \"direction\": \"up\",\n            \"currentFloor\": 1,\n            \"nextFloor\": 1,\n            \"elevatorRequests\": [\n                {\n                    \"requestedFloor\": 5,\n                    \"isPickup\": true,\n                    \"requestedTimestamp\": \"2022-08-16T00:06:34.700Z\"\n                }\n            ],\n            \"requestsByFloor\": [\n                {\n                    \"floorNumber\": 1,\n                    \"dropoffCount\": 0,\n                    \"pickupCount\": 0\n                },\n                {\n                    \"floorNumber\": 2,\n                    \"dropoffCount\": 0,\n                    \"pickupCount\": 0\n                },\n                {\n                    \"floorNumber\": 3,\n                    \"dropoffCount\": 0,\n                    \"pickupCount\": 0\n                },\n                {\n                    \"floorNumber\": 4,\n                    \"dropoffCount\": 0,\n                    \"pickupCount\": 0\n                },\n                {\n                    \"floorNumber\": 5,\n                    \"dropoffCount\": 0,\n                    \"pickupCount\": 1\n                }\n            ],\n            \"requestedFloors\": [\n                5\n            ],\n            \"isPaused\": false,\n            \"msWait\": 2000,\n            \"arrFloors\": [\n                1,\n                2,\n                3,\n                4,\n                5\n            ]\n        }\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Elevator Next Floor",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/elevator/nextfloor/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "elevator",
+            "nextfloor",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Example Success",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "localhost:8080/api/elevator/nextfloor/",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "elevator",
+                "nextfloor",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "65"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"41-5ALt9LSdXxfzG2k2OrRJbtfRup8\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 16 Aug 2022 01:30:44 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"data\": {\n        \"error\": false,\n        \"success\": true,\n        \"results\": {\n            \"nextFloor\": 2\n        }\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Request Pickup",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/elevator/request/pickup/:floorNumber/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "elevator",
+            "request",
+            "pickup",
+            ":floorNumber",
+            ""
+          ],
+          "variable": [
+            {
+              "key": "floorNumber",
+              "value": "5"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Example Success",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/api/elevator/request/pickup/:floorNumber/",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "elevator",
+                "request",
+                "pickup",
+                ":floorNumber",
+                ""
+              ],
+              "variable": [
+                {
+                  "key": "floorNumber",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "589"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"24d-WgpAHlOILAcLgadqZqhgUszJ/aM\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 16 Aug 2022 00:06:34 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"data\": {\n        \"error\": false,\n        \"success\": true,\n        \"results\": {\n            \"state\": \"idle\",\n            \"doors\": \"closed\",\n            \"direction\": \"up\",\n            \"currentFloor\": 1,\n            \"nextFloor\": 1,\n            \"elevatorRequests\": [\n                {\n                    \"requestedFloor\": 5,\n                    \"isPickup\": true,\n                    \"requestedTimestamp\": \"2022-08-16T00:06:34.700Z\"\n                }\n            ],\n            \"requestsByFloor\": [\n                {\n                    \"floorNumber\": 1,\n                    \"dropoffCount\": 0,\n                    \"pickupCount\": 0\n                },\n                {\n                    \"floorNumber\": 2,\n                    \"dropoffCount\": 0,\n                    \"pickupCount\": 0\n                },\n                {\n                    \"floorNumber\": 3,\n                    \"dropoffCount\": 0,\n                    \"pickupCount\": 0\n                },\n                {\n                    \"floorNumber\": 4,\n                    \"dropoffCount\": 0,\n                    \"pickupCount\": 0\n                },\n                {\n                    \"floorNumber\": 5,\n                    \"dropoffCount\": 0,\n                    \"pickupCount\": 1\n                }\n            ],\n            \"requestedFloors\": [\n                5\n            ],\n            \"isPaused\": false,\n            \"msWait\": 2000,\n            \"arrFloors\": [\n                1,\n                2,\n                3,\n                4,\n                5\n            ]\n        }\n    }\n}"
+        },
+        {
+          "name": "Example Error",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/elevator/request/pickup/:floorNumber/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "elevator",
+                "request",
+                "pickup",
+                ":floorNumber",
+                ""
+              ],
+              "variable": [
+                {
+                  "key": "floorNumber",
+                  "value": "99"
+                }
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "115"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"73-DE72cLr1MY+2bFObcnnbFckUJVg\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 16 Aug 2022 00:08:40 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"data\": {\n        \"error\": true,\n        \"success\": false,\n        \"message\": \"The requested floor either does not exist or is not in service.\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Request Dropoff",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/elevator/request/dropoff/:floorNumber/",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "elevator",
+            "request",
+            "dropoff",
+            ":floorNumber",
+            ""
+          ],
+          "variable": [
+            {
+              "key": "floorNumber",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Example Response",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/api/elevator/request/dropoff/:floorNumber/",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "elevator",
+                "request",
+                "dropoff",
+                ":floorNumber",
+                ""
+              ],
+              "variable": [
+                {
+                  "key": "floorNumber",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "592"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"250-8VDyXcDLB68phRdB/ABOc8XwvKU\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 16 Aug 2022 00:07:09 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"data\": {\n        \"error\": false,\n        \"success\": true,\n        \"results\": {\n            \"state\": \"idle\",\n            \"doors\": \"closed\",\n            \"direction\": \"down\",\n            \"currentFloor\": 5,\n            \"nextFloor\": 5,\n            \"elevatorRequests\": [\n                {\n                    \"requestedFloor\": 1,\n                    \"isPickup\": false,\n                    \"requestedTimestamp\": \"2022-08-16T00:07:09.703Z\"\n                }\n            ],\n            \"requestsByFloor\": [\n                {\n                    \"floorNumber\": 1,\n                    \"dropoffCount\": 1,\n                    \"pickupCount\": 0\n                },\n                {\n                    \"floorNumber\": 2,\n                    \"dropoffCount\": 0,\n                    \"pickupCount\": 0\n                },\n                {\n                    \"floorNumber\": 3,\n                    \"dropoffCount\": 0,\n                    \"pickupCount\": 0\n                },\n                {\n                    \"floorNumber\": 4,\n                    \"dropoffCount\": 0,\n                    \"pickupCount\": 0\n                },\n                {\n                    \"floorNumber\": 5,\n                    \"dropoffCount\": 0,\n                    \"pickupCount\": 0\n                }\n            ],\n            \"requestedFloors\": [\n                1\n            ],\n            \"isPaused\": false,\n            \"msWait\": 2000,\n            \"arrFloors\": [\n                1,\n                2,\n                3,\n                4,\n                5\n            ]\n        }\n    }\n}"
+        },
+        {
+          "name": "Example Error",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/elevator/request/dropoff/:floorNumber/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "elevator",
+                "request",
+                "dropoff",
+                ":floorNumber",
+                ""
+              ],
+              "variable": [
+                {
+                  "key": "floorNumber",
+                  "value": "99"
+                }
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "115"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"73-DE72cLr1MY+2bFObcnnbFckUJVg\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 16 Aug 2022 00:09:08 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"data\": {\n        \"error\": true,\n        \"success\": false,\n        \"message\": \"The requested floor either does not exist or is not in service.\"\n    }\n}"
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "localhost:8080",
+      "type": "string"
+    }
+  ]
+}
